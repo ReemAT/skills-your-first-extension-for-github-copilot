@@ -41,7 +41,7 @@ app.post("/copilot", express.json(), async (req, res) => {
     path.join(__dirname, "agent-knowledge", "job-description.md"),
     "utf8"
   );
-  messages.unshift({
+  messages.push({
     role: "system",
     content: jobDescription,
   });
@@ -51,7 +51,7 @@ app.post("/copilot", express.json(), async (req, res) => {
     path.join(__dirname, "agent-knowledge", "school-overview.md"),
     "utf8"
   );
-  messages.unshift({
+  messages.push({
     role: "system",
     content: schoolOverview,
   });
@@ -61,7 +61,7 @@ app.post("/copilot", express.json(), async (req, res) => {
     path.join(__dirname, "agent-knowledge", "staff-roles.md"),
     "utf8"
   );
-  messages.unshift({
+  messages.push({
     role: "system",
     content: staffDescriptions,
   });
